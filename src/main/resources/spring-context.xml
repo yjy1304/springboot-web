@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+              <property name="resourceLoaderPath" value="classpath:/WEB-INF/velocity/"/>
+              <property name="configLocation" value="classpath:/common/velocity.properties"/>
+       </bean>
+
+       <bean id="velocityViewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+              <property name="suffix" value=".vm"/>
+       </bean>
+</beans>
