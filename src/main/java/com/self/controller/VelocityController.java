@@ -14,6 +14,6 @@ public class VelocityController {
     public String index(Model model){
         String name="tester";
         model.addAttribute("name", name);
-        return "/view/index";
+        return "/index";
     }
 }
