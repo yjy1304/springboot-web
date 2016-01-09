@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class VelocityController {
     @RequestMapping(value="/index")
     public String index(Model model){
-        String name="tester";
+        String name="weilong";
         model.addAttribute("name", name);
         return "/index";
     }
