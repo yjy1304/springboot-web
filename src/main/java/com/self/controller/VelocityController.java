@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * Created by wacai on 2016/1/7.
  */
-@RequestMapping(value="/velocity")
 @Controller
 public class VelocityController {
     @RequestMapping(value="/index")

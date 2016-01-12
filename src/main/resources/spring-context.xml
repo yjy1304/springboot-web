@@ -11,4 +11,8 @@
               <property name="suffix" value=".vm"/>
               <property name="contentType" value="text/html;charset=UTF-8"></property>
        </bean>
+
+       <bean id="multipartResolver" class="com.self.utils.CustomMultipartResolver">
+              <property name="maxUploadSize" value="50000000" />
+       </bean
 </beans>
