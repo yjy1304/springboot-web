@@ -13,6 +13,6 @@
        </bean>
 
        <bean id="multipartResolver" class="com.self.utils.CustomMultipartResolver">
-              <property name="maxUploadSize" value="500000000" />
+              <property name="maxUploadSize" value="50000000000" />
        </bean>
 </beans>

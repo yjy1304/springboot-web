@@ -14,12 +14,12 @@ import java.util.Map;
  * Created by wacai on 2016/1/12.
  */
 @Controller
-@SessionAttributes("status")
+@SessionAttributes("fileUploadStatus")
 public class ProgressController {
     @RequestMapping(value="/progress", method ={RequestMethod.POST,RequestMethod.GET})
     @ResponseBody
     public String initCreateInfo(Map<String, Object> model){
-        FileUploadStatus fileUploadStatus = (FileUploadStatus)model.get("status");
+        FileUploadStatus fileUploadStatus = (FileUploadStatus)model.get("fileUploadStatus");
         if(fileUploadStatus == null){
             return "{}";
         }

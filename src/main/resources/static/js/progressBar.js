@@ -29,7 +29,7 @@ function getProgressBar(){
                 contentLengthToShow = (contentLength /1024).toString();
                 contentLengthGtMB = 1;
             }else{
-                contentLengthToShow = contentLength.toString;
+                contentLengthToShow = contentLength.toString();
             }
             bytesReadToShow = bytesReadToShow.substring(0, bytesReadToShow.lastIndexOf(".") + 3);
             contentLengthToShow = contentLengthToShow.substring(0, contentLengthToShow.lastIndexOf(".") + 3);
@@ -42,7 +42,7 @@ function getProgressBar(){
                     $("div#info").html("\u4e0a\u4f20\u5b8c\u6210\uff01\u603b\u5171\u5927\u5c0f" + contentLengthToShow + "MB.\u5b8c\u6210100%");
                 }
                 window.clearTimeout(interval);
-                $("#subButton").attr("disabled", false);
+                $("#execSub").attr("disabled", false);
             } else {
                 var pastTimeBySec = (new Date().getTime() - startTime) / 1000;
                 var sp = (bytesRead / pastTimeBySec).toString();
@@ -63,4 +63,5 @@ function getProgressBar(){
             }
         }
     )
+    var interval = window.setTimeout("getProgressBar()", 500);
 }

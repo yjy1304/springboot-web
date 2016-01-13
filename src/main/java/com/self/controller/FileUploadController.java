@@ -20,7 +20,7 @@ import java.io.IOException;
  */
 @Controller
 public class FileUploadController {
-    @RequestMapping(value="/upload", method =RequestMethod.POST)
+    @RequestMapping(value="/upload", method ={RequestMethod.POST,RequestMethod.GET})
     public String upload(MultipartHttpServletRequest request, HttpServletResponse response) throws IOException{
         MultipartFile file = request.getFile("uploadFile");
         file.transferTo(new File("E:/test.txt"));
