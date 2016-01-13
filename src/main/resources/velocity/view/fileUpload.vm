@@ -1,0 +1,24 @@
+<htmL>
+    <head>
+        <title>上传进度条</title>
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/progressBar.js"></script>
+        <link type="text/css" rel="stylesheet" href="/css/upload.css">
+    </head>
+    <body>
+        <iframe id='target_upload' name='target_upload' src='' style='display: none'></iframe>
+        <form action="/upload" id="uploadForm" method="post" enctype="multipart/form-data" target="target_upload">
+            <input type="file" name="uploadFile" id="uploadFile"/>
+            <input type="submit" name="execSub" id="execSub" value="上传"/>
+        </form>
+
+
+        <div id="progress">
+            <div id="title"><span id="text">上传进度</span><div id="close">X</div></div>
+            <div id="progressBar">
+                <div id="uploaded"></div>
+            </div>
+        </div>
+    </body>
+
+</htmL>

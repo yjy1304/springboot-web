@@ -31,4 +31,9 @@ public class FileUploadStatus {
     public void setItems(long items) {
         this.items = items;
     }
+
+    @Override
+    public String toString(){
+        return "{\"bytesRead\":" +getBytesRead()+",\"contentLength\":"+getContentLength()+"}";
+    }
 }

@@ -16,7 +16,7 @@ import java.util.Map;
 @Controller
 @SessionAttributes("status")
 public class ProgressController {
-    @RequestMapping(value="/progress", method = RequestMethod.POST)
+    @RequestMapping(value="/progress", method ={RequestMethod.POST,RequestMethod.GET})
     @ResponseBody
     public String initCreateInfo(Map<String, Object> model){
         FileUploadStatus fileUploadStatus = (FileUploadStatus)model.get("status");

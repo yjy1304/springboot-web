@@ -1,6 +1,7 @@
 package com.self.utils;
 
 import org.apache.commons.fileupload.ProgressListener;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Created by wacai on 2016/1/12.
  */
+@Component
 public class UploadProgressListener implements ProgressListener{
     private HttpSession session;
 

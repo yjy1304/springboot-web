@@ -18,13 +18,12 @@ import java.util.List;
  * Created by wacai on 2016/1/12.
  */
 public class CustomMultipartResolver extends CommonsMultipartResolver{
-    @Autowired
-    private UploadProgressListener uploadProgressListener;
 
     @Override
     public MultipartParsingResult parseRequest(HttpServletRequest request) throws MultipartException{
         String encoding = determineEncoding(request);
         FileUpload fileUpload = prepareFileUpload(encoding);
+        UploadProgressListener uploadProgressListener = new UploadProgressListener();
         uploadProgressListener.setSession(request.getSession());
         fileUpload.setProgressListener(uploadProgressListener);
         try{
