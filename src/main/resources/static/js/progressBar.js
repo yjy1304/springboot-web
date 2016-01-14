@@ -6,7 +6,7 @@ $(document).ready(function(){
         $(this).attr("disabled", true);
         var retstatus = $("form").submit();
         $("#progress").show();
-        window.setTimeout("getProgressBar()", 1000);
+        window.setTimeout("getProgressBar()", 2000);
     })
     $("#close").click(function(){$("#progress").hide();})
 })
