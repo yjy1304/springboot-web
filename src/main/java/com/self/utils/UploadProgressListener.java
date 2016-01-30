@@ -17,6 +17,7 @@ public class UploadProgressListener implements ProgressListener{
         this.session = session;
         FileUploadStatus fileUploadStatus = new FileUploadStatus();
         session.setAttribute("fileUploadStatus", fileUploadStatus);
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>已经将status置入session,sid:" + session.getId() + "，status:" + fileUploadStatus.toString());
     }
 
     @Override
