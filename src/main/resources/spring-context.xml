@@ -15,4 +15,9 @@
        <bean id="multipartResolver" class="com.self.utils.CustomMultipartResolver">
               <property name="maxUploadSize" value="50000000000" />
        </bean>
+
+       <!-- 缓存管理器 -->
+       <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+              <property name="cacheManagerConfigFile" value="classpath:ehcache.xml"/>
+       </bean>
 </beans>
