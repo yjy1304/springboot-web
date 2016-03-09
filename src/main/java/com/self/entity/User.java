@@ -6,6 +6,7 @@ package com.self.entity;
 public class User {
     private Long id;
     private String name;
+    private String pwd;
 
     public Long getId() {
         return id;
@@ -21,6 +22,14 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 
     @Override
