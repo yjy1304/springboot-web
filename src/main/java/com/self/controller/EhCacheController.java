@@ -1,5 +1,6 @@
 package com.self.controller;
 
+import com.self.entity.User;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheManager;
@@ -23,15 +24,23 @@ public class EhCacheController {
     @RequestMapping(value="/ehcache/put/{key}")
     @ResponseBody
     private String put(@PathVariable("key") String key){
-        Cache<String, AtomicInteger> testCache = cacheManager.getCache("test1");
+        Cache<String, User> testCache = cacheManager.getCache("testCache");
+        User user = new User(new Long(1), key, "123");
         if(testCache.get(key) == null){
-            testCache.put(key, new AtomicInteger(0));
+            testCache.put(key, user);
         }
 
-        AtomicInteger ai = testCache.get(key);
-        int i = ai.incrementAndGet();
 
-        return "缓存值:" + i;
+        return "放入缓存值:" + user;
+    }
+
+    @RequestMapping(value="/ehcache/get/{key}")
+    @ResponseBody
+    private String get(@PathVariable("key") String key){
+        Cache<String, User> testCache = cacheManager.getCache("testCache");
+        User user = testCache.get(key);
+
+        return "获得缓存值:" + user;
     }
 
 }

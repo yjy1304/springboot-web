@@ -1,13 +1,22 @@
 package com.self.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by wacai on 2016/1/7.
  */
-public class User {
+public class User implements Serializable{
+    private static final long serialVersionUID = 1L;
+
     private Long id;
     private String name;
     private String pwd;
 
+    public User(Long id , String name, String pwd){
+        this.id = id;
+        this.name = name;
+        this.pwd = pwd;
+    }
     public Long getId() {
         return id;
     }
