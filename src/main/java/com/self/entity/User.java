@@ -1,16 +1,16 @@
 package com.self.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by wacai on 2016/1/7.
  */
-public class User implements Serializable{
-    private static final long serialVersionUID = 1L;
-
+public class User{
     private Long id;
     private String name;
     private String pwd;
+    private List<Account> accounts;
 
     public User(Long id , String name, String pwd){
         this.id = id;
@@ -41,6 +41,14 @@ public class User implements Serializable{
         this.pwd = pwd;
     }
 
+    public List<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(List<Account> accounts) {
+        this.accounts = accounts;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -63,6 +71,8 @@ public class User implements Serializable{
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", accounts=" + accounts +
                 '}';
     }
 }

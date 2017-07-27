@@ -56,6 +56,22 @@
     </dependencies>
 
     <build>
+        <resources>
+            <!--src/main/java中对应的class文件在打包时将被包含，但是其它资源文件（如xml）将需要通过这种方式额外引入-->
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <!--resources中的文件package时不会被包含，也需要额外引入，多模板时需要用basedir-->
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>conf/**</exclude>
+                </excludes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

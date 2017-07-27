@@ -3,10 +3,6 @@ package com.self;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.self.shiro.UserRealm;
-import org.apache.shiro.spring.LifecycleBeanPostProcessor;
-import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
-import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
-import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.DependsOn;
@@ -83,11 +79,11 @@ public class WebConfig extends WebMvcConfigurerAdapter{
         return converter;
     }
 
-    @Bean(name = "shiroFilter")
+    /*@Bean(name = "shiroFilter")
     public ShiroFilterFactoryBean shiroFilter() {
 
         ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
-        shiroFilter.setLoginUrl("/**");
+        shiroFilter.setLoginUrl("*//**");
         shiroFilter.setSecurityManager(securityManager());
 
         Map<String, Filter> filters = new HashMap<String, Filter>();
@@ -105,7 +101,7 @@ public class WebConfig extends WebMvcConfigurerAdapter{
         securityManager.setRealm(sophiaRealm());
 
         return securityManager;
-    }
+    }*/
 
     @Bean(name = "sophiaRealm")
     @DependsOn("lifecycleBeanPostProcessor")
@@ -113,8 +109,8 @@ public class WebConfig extends WebMvcConfigurerAdapter{
         return new UserRealm();
     }
 
-    @Bean
-    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
-        return new LifecycleBeanPostProcessor();
-    }
+//    @Bean
+//    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
+//        return new LifecycleBeanPostProcessor();
+//    }
 }
